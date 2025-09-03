@@ -1,0 +1,20 @@
+# Usamos una imagen oficial de Node.js como base
+FROM node:20-slim
+
+# Establecemos el directorio de trabajo dentro del contenedor
+WORKDIR /app
+
+# Copiamos el package.json y package-lock.json para instalar dependencias
+COPY package*.json ./
+
+# Ejecutamos npm install para descargar las librerías (express y axios)
+RUN npm install
+
+# Copiamos el resto del código de nuestra aplicación
+COPY . .
+
+# Exponemos el puerto 3000, que es el que usa nuestro servidor
+EXPOSE 3000
+
+# El comando que se ejecutará cuando el contenedor inicie
+CMD [ "node", "index.js" ]

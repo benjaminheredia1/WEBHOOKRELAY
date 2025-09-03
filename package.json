@@ -1,0 +1,13 @@
+{
+  "name": "webhook-relay",
+  "version": "1.0.0",
+  "description": "Un simple webhook relay",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.2",
+    "express": "^4.19.2"
+  }
+}
